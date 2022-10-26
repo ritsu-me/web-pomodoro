@@ -1,4 +1,38 @@
 *{
     margin: 0px;
     padding: 0px;
+    background-color: #2f3136;
+    color: snow;
+    text-align: center;
+}
+.pie {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.pie {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 30px auto;
+    border-radius: 50%;
+    background: #6495ed;
+    background: linear-gradient(to right, #6495ed 50%, #ffff5b 0);/*左が紺色、右が黄色*/
+}
+.pie::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: #6495ed;
+    transform-origin: left;
+    animation: spin 150s linear infinite,color 300s step-end infinite;
+    -webkit-animation: spin 150s linear infinite,color 300s step-end infinite;
+}
+@keyframes spin {
+    to { transform: rotate(.5turn); }
+}
+@keyframes color {
+    50% { background: #ffff5b; }/*黄色*/
 }
